@@ -1,57 +1,44 @@
-// Creates an array of intergers between two numbers
-function interval(j, k) { 
-    var targetLength = (k - j) + 1;
-    var a = Array(targetLength);
-    var b = Array.apply(null, a);
-    var c = b.map(function(_, n){ return n + j; });
-    return c;
-}
-
 // Stores all the ASCII codes that represent each desired character set
-var lowerCharCodes = interval(65,90);
-var upperCharCodes = interval(97,122);
-var numericCharCodes = interval(48,57);
-var specialCharCodes = interval(33,47).concat(
-  interval(58,64)).concat(
-  interval(91,96)).concat(
-  interval(122,126));
-  
-//Generates password
-function generatePassword (){
-  //Default character code
-  var characterCode = lowerCharCodes;
+var lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
+var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numericCharacters = "0123456789";
+var specialCharacters = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
 
-//User password criteria
-  var characterLenght = window.prompt("Enter the password lenght from 8 to 128", "8-128");
+// Generates password
+function generatePassword (){
+  // Characters dertermined by user criteria
+  var characters = "";
+
+  // User password criteria
+  var length = window.prompt("Enter the password lenght from 8 to 128", "8-128");
 
   var includeLowerCase = window.confirm("Include lowercase characters?");
   if (includeLowerCase) {
-    characterCode = characterCode;
+    characters = characters += lowerCharacters;
   };
 
   var includeUpperCase = window.confirm("Include uppercase characters?");
   if (includeUpperCase) {
-    characterCode = characterCode.concat(upperCharCodes);
+    characters = characters += upperCharacters;
   };
 
   var includeNumeric = window.confirm("Include numeric characters?");
   if (includeNumeric) {
-    characterCode = characterCode.concat(numericCharCodes);
+    characters = characters += numericCharacters;
   };
   var includeSpecial = window.confirm("Include special characters?");
   if (includeSpecial) {
-    characterCode = characterCode.concat(specialCharCodes);
+    characters = characters += specialCharacters;
   };
 
   //Randomizes characters considering user criteria
-  let passwordCharacters = []
-  for (let i = 0; i < characterLenght; i++) {
-    var finalCode = characterCode[Math.floor(Math.random() * characterCode.lenght)]
-    passwordCharacters.push(String.fromCharCode(finalCode))
+  var passwordCharacters = [];
+  var n = characters.length;
+  for (let i = 0; i < length; i++) {
+    passwordCharacters.push(characters[Math.floor(Math.random() * n)])
   }
-  return passwordCharacters.join ("")
+  return passwordCharacters.join("");
 }
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -62,7 +49,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
