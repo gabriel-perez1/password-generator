@@ -1,4 +1,4 @@
-// Stores all the ASCII codes that represent each desired character set
+// Variables that store the different character strings
 var lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
 var upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericCharacters = "0123456789";
@@ -10,25 +10,32 @@ function generatePassword (){
   var characters = "";
 
   // User password criteria
+
+  // Prompt for password length
   var length = window.prompt("Enter the password lenght from 8 to 128", "8-128");
 
+  // Prompt to include lowercase characters
   var includeLowerCase = window.confirm("Include lowercase characters?");
   if (includeLowerCase) {
-    characters = characters += lowerCharacters;
+    characters = characters.concat(lowerCharacters);
   };
 
+  // Prompt to include uppercase characters
   var includeUpperCase = window.confirm("Include uppercase characters?");
   if (includeUpperCase) {
-    characters = characters += upperCharacters;
+    characters = characters.concat(upperCharacters);
   };
 
+  // Prompt to include numeric characters
   var includeNumeric = window.confirm("Include numeric characters?");
   if (includeNumeric) {
-    characters = characters += numericCharacters;
+    characters = characters.concat(numericCharacters);
   };
+
+  // Prompt to include special characters
   var includeSpecial = window.confirm("Include special characters?");
   if (includeSpecial) {
-    characters = characters += specialCharacters;
+    characters = characters.concat(specialCharacters);
   };
 
   //Randomizes characters considering user criteria
