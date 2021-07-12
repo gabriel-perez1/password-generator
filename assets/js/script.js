@@ -11,8 +11,10 @@ function generatePassword (){
 
   // User password criteria
 
-  // Prompt for password length
-  var length = window.prompt("Enter the password lenght from 8 to 128", "8-128");
+  // Prompt for password length until user inputs from 8-128
+   do {
+     var length = parseInt(window.prompt("Enter the password lenght from 8 to 128", ""), 12);
+   }while(isNaN(length) || length > 128 || length < 8);
 
   // Prompt to include lowercase characters
   var includeLowerCase = window.confirm("Include lowercase characters?");
