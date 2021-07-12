@@ -1,12 +1,12 @@
 # Password Generator
 The Password Generator web app generates a passwords based on the user selected criteria.
 
-![Password Generator preview](./assets/images/passwordGenerator.png "Password Generator main section")
+![Password Generator preview](./assets/images/passwordGenerator.PNG "Password Generator main section")
 ## Criteria
 * Password character length from 8-128.
-![Password Generator length prompt](./assets/images/characterlength.png "Password Generator length prompt")
+![Password Generator length prompt](./assets/images/characterlength.PNG "Password Generator length prompt")
 * Lowercase, uppercase, numeric and/or special characters.
-![Password Generator character criteria prompt](./assets/images/lowercasePrompt.png "Password Generator lowercase prompt")
+![Password Generator character criteria prompt](./assets/images/lowercasePrompt.PNG "Password Generator lowercase prompt")
 
 ## Technologies Used
 The Password Generator was developed utilizing HTML, CSS and Javascript.
