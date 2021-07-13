@@ -6,6 +6,7 @@ The Password Generator web app generates a passwords based on the user selected 
 ## Criteria
 * Password character length from 8-128.
 <img align="center" src="./assets/images/characterlength.PNG" alt="Password Generator character length prompt">
+
 * Lowercase, uppercase, numeric and/or special characters.
 <img align="center" src="./assets/images/lowercasePrompt.PNG" alt="Password Generator lowercase character prompt">
 
